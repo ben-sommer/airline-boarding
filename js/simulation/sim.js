@@ -7,6 +7,7 @@ window.canvas = canvas;
 
 const rows = 30;
 const halfWidth = 3;
+window.halfWidth = halfWidth;
 const seatConfig = [halfWidth, halfWidth]; // 3, 3 refers to normal airline config of 3 seats left/right
 const rowWidth = seatConfig.reduce((a, b) => a + b, 0);
 

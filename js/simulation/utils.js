@@ -55,3 +55,19 @@ export const initialise = ({
 
     return people;
 };
+export const convToCanvasLocation = (row, col) => {
+    const offsetX = 16;
+    const offsetY = (600 - 16 * (row + windows.halfWidth - 1)) / 2;
+    let aisleOffset = col > 2 ? 1 : 0;
+    return {
+        x: offsetX + (3 + row) * 16,
+        y: offsetY + col * 16 + aisleOffset * 16,
+    };
+};
+export const convToGridLocation = (x, y) => {
+    const offsetX = 16;
+    const offsetY = (600 - 16 * (row + windows.halfWidth - 1)) / 2;
+    const row = Math.floor((y - offsetY) / 16);
+    const col = Math.floor((x - offsetX) / 16);
+    return { row, col };
+};
